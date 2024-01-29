@@ -16,7 +16,7 @@ public class EncryptService {
         this.key = key;
     }
 
-    public void encryptFile() throws IOException {
+    public void encryptFile() {
         String originalText = FileOperations.readFile(inputFile);
         String encryptedText = TextTransformer.encrypt(originalText, key);
         FileOperations.writeFile(outputFile, encryptedText);
