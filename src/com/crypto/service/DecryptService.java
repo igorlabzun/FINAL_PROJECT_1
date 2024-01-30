@@ -19,6 +19,6 @@ public class DecryptService {
     public void decryptFile()  {
         String encryptedText = FileOperations.readFile(encryptedFile);
         String decryptedText = TextTransformer.decrypt(encryptedText,key);
-       FileOperations.writeFile(outputFile,decryptedText);
+        FileOperations.writeFile(outputFile,decryptedText);
     }
 }

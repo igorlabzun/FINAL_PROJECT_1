@@ -3,7 +3,7 @@ package com.crypto.service;
 import com.crypto.transformer.FileOperations;
 import com.crypto.transformer.TextTransformer;
 
-import java.io.IOException;
+
 
 public class EncryptService {
     final String inputFile;
