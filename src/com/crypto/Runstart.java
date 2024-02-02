@@ -9,23 +9,24 @@ import com.crypto.util.InputValidation;
 
 
 
-public class Run  {
+public class Runstart {
     private static final int COMMAND_ARGUMENTS_POSITION = 0;
     private static final int FILE_PATH_ARGUMENTS_POSITION = 1;
     private static final int KEY_ARGUMENTS_POSITION = 2;
 
-    public static void pet(String[] args) {
+
+    public static void run(String[] args){
         InputValidation.validateInput(args);
-        InputValidation.validateCommand(args[Run.COMMAND_ARGUMENTS_POSITION]);
-        InputValidation.validateFilePath(args[Run.FILE_PATH_ARGUMENTS_POSITION]);
-        InputValidation.validateKey(args[Run.KEY_ARGUMENTS_POSITION]);
+        InputValidation.validateCommand(args[Runstart.COMMAND_ARGUMENTS_POSITION]);
+        InputValidation.validateFilePath(args[Runstart.FILE_PATH_ARGUMENTS_POSITION]);
+        InputValidation.validateKey(args[Runstart.KEY_ARGUMENTS_POSITION]);
 
-        String inputFile = args[Run.FILE_PATH_ARGUMENTS_POSITION];
-        String encryptedFile = inputFile.replace(".txt", "[ENCRYPT].txt");// Оновлення імені вихідного файлу
-        int key = Integer.parseInt(args[Run.KEY_ARGUMENTS_POSITION]);
+        String inputFile = args[Runstart.FILE_PATH_ARGUMENTS_POSITION];
+        String encryptedFile = inputFile.replace(".txt", "[ENCRYPT].txt");
+        int key = Integer.parseInt(args[Runstart.KEY_ARGUMENTS_POSITION]);
 
 
-        Mode mode = Mode.valueOf(args[Run.COMMAND_ARGUMENTS_POSITION]);
+        Mode mode = Mode.valueOf(args[Runstart.COMMAND_ARGUMENTS_POSITION]);
         switch (mode) {
             case ENCRYPT:
                 new EncryptService(inputFile, encryptedFile, key).encryptFile();
@@ -41,9 +42,6 @@ public class Run  {
             default:
                 throw new IllegalStateException("Unexpected value: " + mode);
         }
-
-
-
 
     }
 

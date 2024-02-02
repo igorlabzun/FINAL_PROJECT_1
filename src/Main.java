@@ -1,8 +1,8 @@
-import com.crypto.Run;
+
+import com.crypto.Runstart;
 
 public class Main {
     public static void main(String[] args) {
-        Run.pet(args);
-
+        Runstart.run(args);
     }
 }

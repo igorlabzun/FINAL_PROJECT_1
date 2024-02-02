@@ -11,10 +11,8 @@ public class BruteForceService {
         BruteForceService.encryptedFile = encryptedFile;
 
     }
-
-
     public static void bruteForceDecrypt()  {
-        System.out.println(" Розшифровка методом brute-force:");
+        System.out.println(" Decoding by method brute-force:");
         caesarCipher.setEnglishAlphabet("abcdefghijklmnopqrstuvwxyz");
         String variable = caesarCipher.getEnglishAlphabet();
 
@@ -23,7 +21,7 @@ public class BruteForceService {
         for (int key = 0; key < variable.length() ; key++) {
             String encryptedText = FileOperations.readFile(encryptedFile);
             String decryptedText = TextTransformer.decrypt(encryptedText, key);
-            System.out.println("Зсув " + key + ": " + decryptedText);
+            System.out.println("Landslide " + key + ": " + decryptedText);
         }
     }
 }
